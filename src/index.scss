@@ -10,7 +10,9 @@
 p {
   margin: 0;
 }
-
+body {
+  position: relative;
+}
 body,
 p,
 h1,
@@ -26,4 +28,20 @@ button {
   font-size: 1.1rem;
   margin: 1.2rem 0;
   padding: 0.4rem 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.link-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.close-button {
+  color: red;
+}
+.close-button:hover {
+  color: rgba(255, 0, 0, 0.719);
 }

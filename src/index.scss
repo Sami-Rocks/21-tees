@@ -31,6 +31,11 @@ button {
   outline: none;
   cursor: pointer;
 }
+.primary-button {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 4rem;
+}
 
 .link-button {
   margin: 0;
@@ -44,4 +49,56 @@ button {
 }
 .close-button:hover {
   color: rgba(255, 0, 0, 0.719);
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.wrapper .option {
+  background: #fff;
+  height: 2.2rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 0 0rem;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+#gildan:checked:checked ~ .gildan,
+#white:checked:checked ~ .white,
+#light-grey:checked:checked ~ .light-grey,
+#dark-grey:checked:checked ~ .dark-grey,
+#dark:checked:checked ~ .dark,
+#M:checked:checked ~ .M,
+#S:checked:checked ~ .S,
+#M:checked:checked ~ .M,
+#L:checked:checked ~ .X,
+#XL:checked:checked ~ .XL {
+  border-color: #0069d9;
+  background: #0069d9;
+}
+.wrapper .option span {
+  font-size: 1rem;
+  color: #808080;
+}
+.wrapper .option {
+  overflow: hidden;
+}
+.wrapper img {
+  width: 4rem;
+  object-fit: cover;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span {
+  color: #fff;
 }

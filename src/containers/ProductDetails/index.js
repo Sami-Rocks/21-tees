@@ -21,51 +21,51 @@ const ProductDetails = () => {
                     <div className="options">
                         <div className="brand">
                             <div className="option-title" >1. Brand</div>
-                            <div class="wrapper">
-                                <input type="radio" name="brand" value="gildan" id="gildan" checked />
-                                <label for="gildan" class="option gildan">
+                            <div className="wrapper">
+                                <input type="radio" name="brand" value="gildan" id="gildan" defaultChecked />
+                                <label htmlFor="gildan" className="option gildan">
                                     <span>GILDAN</span>
                                 </label>
                             </div>
                         </div>
                         <div className="size">
                             <div className="option-title" >2. Size</div>
-                            <div class="wrapper">
-                                <input type="radio" name="size" value="S" id="S" checked />
+                            <div className="wrapper">
+                                <input type="radio" name="size" value="S" id="S" defaultChecked />
                                 <input type="radio" name="size" value="M" id="M" />
                                 <input type="radio" name="size" value="L" id="L" />
                                 <input type="radio" name="size" value="XL" id="XL" />
-                                <label for="S" class="option S" >
+                                <label htmlFor="S" className="option S" >
                                     <span>S</span>
                                     </label>
-                                <label for="M" class="option M">
+                                <label htmlFor="M" className="option M">
                                     <span>M</span>
                                 </label>
-                                <label for="L" class="option L">
+                                <label htmlFor="L" className="option L">
                                     <span>L</span>
                                 </label>
-                                <label for="XL" class="option XL">
+                                <label htmlFor="XL" className="option XL">
                                     <span>XL</span>
                                 </label>
                             </div>
                         </div>
                         <div className="color" >
                         <div className="option-title" >3. Color</div>
-                        <div class="wrapper">
-                                <input type="radio" name="color" value="white" id="white" checked />
+                        <div className="wrapper">
+                                <input type="radio" name="color" value="white" id="white" defaultChecked />
                                 <input type="radio" name="color" value="dark-grey" id="dark-grey" />
                                 <input type="radio" name="color" value="light-grey" id="light-grey" />
                                 <input type="radio" name="color" value="dark" id="dark" />
-                                <label for="white" class="option white" >
+                                <label htmlFor="white" className="option white" >
                                     <span></span>
                                     </label>
-                                <label for="dark-grey" class="option dark-grey">
+                                <label htmlFor="dark-grey" className="option dark-grey">
                                         <img src={DarkGrey} alt="dark-grey" />
                                 </label>
-                                <label for="light-grey" class="option light-grey">
+                                <label htmlFor="light-grey" className="option light-grey">
                                     <img src={LightGrey} alt="dark-grey" />
                                 </label>
-                                <label for="dark" class="option dark">
+                                <label htmlFor="dark" className="option dark">
                                     <img src={Dark} alt="dark-grey" />
                                 </label>
                             </div>

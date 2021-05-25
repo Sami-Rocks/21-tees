@@ -3,6 +3,8 @@
 :root {
   --grey: "#eeeeee";
   --dark: "#000000";
+  --red: "#FF5A5A";
+  --highlight: "#E0E0E0";
 
   font-size: 100%;
 }
@@ -30,11 +32,19 @@ button {
   padding: 0.4rem 1rem;
   outline: none;
   cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
 }
 .primary-button {
+  background-color: #ff5a5a;
+  color: #ffffff;
   font-size: 2rem;
   font-weight: 500;
   padding: 1rem 4rem;
+  border: none;
+}
+.primary-button:hover {
+  background-color: #ff5a5ae7;
 }
 
 .link-button {
@@ -45,29 +55,29 @@ button {
 }
 
 .close-button {
-  color: red;
+  color: var(--red);
 }
 .close-button:hover {
-  color: rgba(255, 0, 0, 0.719);
+  color: #ff0000b7;
 }
 
 .wrapper {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 .wrapper .option {
-  background: #fff;
   height: 2.2rem;
   width: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0 1rem;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   padding: 0 0rem;
-  border: 2px solid lightgrey;
+  border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
 }
 
@@ -82,14 +92,13 @@ input[type="radio"] {
 #M:checked:checked ~ .M,
 #S:checked:checked ~ .S,
 #M:checked:checked ~ .M,
-#L:checked:checked ~ .X,
+#L:checked:checked ~ .L,
 #XL:checked:checked ~ .XL {
-  border-color: #0069d9;
-  background: #0069d9;
+  border: 1px solid #ff5a5a;
 }
 .wrapper .option span {
   font-size: 1rem;
-  color: #808080;
+  color: #000;
 }
 .wrapper .option {
   overflow: hidden;
@@ -97,8 +106,4 @@ input[type="radio"] {
 .wrapper img {
   width: 4rem;
   object-fit: cover;
-}
-#option-1:checked:checked ~ .option-1 span,
-#option-2:checked:checked ~ .option-2 span {
-  color: #fff;
 }

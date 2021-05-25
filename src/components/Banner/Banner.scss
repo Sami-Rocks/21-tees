@@ -1,25 +1,34 @@
 @import "./../../assets/css/colors.scss";
 
 .banner {
-  height: 20rem;
-  padding: 0 2rem;
+  height: 25rem;
   background: $light-grey;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
 
+  .container {
+    padding: 0 2rem;
+  }
+
   h1 {
     font-size: 2.5rem;
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .banner {
-    justify-content: start;
     text-align: left;
     padding: 0 4rem;
 
+    .container {
+      width: 100%;
+      padding: 0 4rem;
+      display: flex;
+      margin: 0;
+      justify-content: flex-start;
+    }
     h1 {
       font-size: 4.5rem;
       line-height: 6rem;

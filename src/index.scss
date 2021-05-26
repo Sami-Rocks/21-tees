@@ -46,6 +46,13 @@ button {
 .primary-button:hover {
   background-color: #ff5a5ae7;
 }
+.special-button {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+}
+.special-button:hover {
+  background-color: #ececec;
+}
 
 .link-button {
   margin: 0;

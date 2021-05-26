@@ -1,0 +1,49 @@
+.cart-card {
+  width: 95%;
+  border-radius: 2px;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  position: relative;
+  gap: 2rem;
+
+  .icon {
+    position: absolute;
+    width: 1rem;
+    bottom: 1rem;
+    left: 11rem;
+  }
+
+  .product-image img {
+    width: 10rem;
+    height: 12rem;
+    object-fit: cover;
+    text-transform: uppercase;
+  }
+
+  .product-name {
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    word-wrap: none;
+  }
+  .product-description {
+    font-weight: 200;
+    font-style: italic;
+    word-wrap: none;
+  }
+
+  .product-number {
+    display: flex;
+
+    .number {
+      margin-top: 1rem;
+      padding: 0.6rem 1.5rem;
+    }
+  }
+  .product-price {
+    font-size: 1.6rem;
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}

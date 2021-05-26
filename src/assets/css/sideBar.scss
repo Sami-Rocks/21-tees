@@ -1,18 +1,19 @@
 .side-bar {
   display: block;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.479);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 2000;
   top: 0;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 
   .container {
     transition: all 0.3s ease-in-out;
     position: absolute;
     background-color: white;
-    width: 17rem;
+    width: 30rem;
     height: 100%;
     padding: 1rem;
     display: flex;

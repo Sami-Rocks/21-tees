@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { RightSideBarContext } from '../../helpers/SideBarContext'
 import './RightSideBar.scss'
 
+import CartCard from './../CartCard/';
+
 
 const RightSideBar = () =>{
     const { rightSideBar, setRightSideBar } = useContext(RightSideBarContext)
@@ -33,8 +35,17 @@ const RightSideBar = () =>{
                     </div>
                 </div>
                 <div className="content">
-
+                    <div className="cart">
+                        <CartCard />
+                        <CartCard />
+                        <CartCard />
+                        <CartCard />
+                    </div>
                 </div>
+                <h2 className="total" > <span>TOTAL:  </span> <span className="currency">GHC</span> 25.00 </h2>
+            <button className="button primary-button" >
+                CHECKOUT
+            </button>
             </div>
         </div>
     )

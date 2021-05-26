@@ -9,6 +9,7 @@ import {RightSideBarContext} from './../../helpers/SideBarContext.js'
 import { useState } from 'react';
 import RightSideBar from '../../components/RightSideBar';
 import ProductDetails from '../ProductDetails';
+import Checkout from '../Checkout';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
       </LeftSideBarContext.Provider>
       <Banner />
       <div className="container" >
-        <ProductDetails />
+        <Checkout />
       </div>
     </div>
   );

@@ -50,6 +50,13 @@
   .product-price {
     font-size: 1rem;
     margin: -0.5rem 0;
+    display: flex;
+    gap: 1rem;
+    .link-button {
+      color: $red;
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+    }
     span {
       font-size: 0.5rem;
     }

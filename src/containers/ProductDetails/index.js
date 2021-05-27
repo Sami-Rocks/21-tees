@@ -5,20 +5,29 @@ import './ProductDetails.scss'
 import LightGrey from './../.../../../assets/images/light-grey.png'
 import DarkGrey from './../.../../../assets/images/dark-grey.png'
 import Dark from './../.../../../assets/images/dark.png'
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { RightSideBarContext } from '../../helpers/SideBarContext';
 import { useForm } from 'react-hook-form';
-
+import { addToCart } from './../../Actions'
+import { useDispatch } from 'react-redux';
 
 const ProductDetails = () => {
     const history = useHistory();
     const { rightSideBar, setRightSideBar } = useContext(RightSideBarContext)
     const { register, handleSubmit } = useForm()
+    const dispatch = useDispatch()
+
+    let {id} = useParams()
 
     const onSubmit = data =>{
+        data.id = id
         console.log(data)
+        
         goBack();
         toggleRightSideBar()
+
+        dispatch(addToCart(data))
+
     }
 
     const goBack = () =>{

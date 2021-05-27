@@ -4,10 +4,14 @@ import './RightSideBar.scss'
 
 import CartCard from './../CartCard/';
 import { useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
 
 
 const RightSideBar = () =>{
     const { rightSideBar, setRightSideBar } = useContext(RightSideBarContext)
+    const cart = useSelector(state => state.cart)
+
+
     const history = useHistory();
     if(!rightSideBar){
         return(

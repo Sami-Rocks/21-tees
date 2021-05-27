@@ -2,11 +2,20 @@ import React, { useState } from 'react'
 import './CartCard.scss'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
+import { useDispatch } from 'react-redux';
+import { removeFromCart } from './../../Actions/'
 
 
 const CartCard = () =>{
 
     const [numberOfShirts, setNumberOfShirts] = useState(1)
+    const dispatch = useDispatch()
+
+    let product = {id: "21"}
+
+    const remove = (product) =>{
+        dispatch(removeFromCart(product))
+    }
 
     const increaseNumberOfShirt = () =>{
         setNumberOfShirts(prevNumer => prevNumer+ 1)
@@ -46,6 +55,7 @@ const CartCard = () =>{
                 </div>
                 <div className="product-price">
                     <p> <span>GHC</span> 25.00 </p>
+                    <button className="button link-button" onClick={()=>remove(product)}  ><i> remove from cart</i></button>
                 </div>
             </div>
             <img className="icon"  src={Icon} alt="Icons" />

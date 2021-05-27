@@ -13,7 +13,7 @@ import { useForm } from 'react-hook-form';
 const ProductDetails = () => {
     const history = useHistory();
     const { rightSideBar, setRightSideBar } = useContext(RightSideBarContext)
-    const { register, formState: { errors }, handleSubmit } = useForm()
+    const { register, handleSubmit } = useForm()
 
     const onSubmit = data =>{
         console.log(data)

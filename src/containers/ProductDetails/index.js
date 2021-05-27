@@ -17,6 +17,11 @@ const ProductDetails = () => {
           history.push("/");
     }
 
+    const addToCart = () =>{
+        goBack();
+        toggleRightSideBar()
+    }
+
     const toggleRightSideBar = () =>{
         if(rightSideBar){
             setRightSideBar(false)
@@ -95,7 +100,7 @@ const ProductDetails = () => {
                         <div className="price">
                             <p> <span>GHC</span> 25.00</p>
                         </div>
-                        <button className="button primary-button" onClick={toggleRightSideBar} >ADD TO CART</button>
+                        <button className="button primary-button" onClick={addToCart} >ADD TO CART</button>
                     </div>
                 </div>
                 <div className="icon">

@@ -38,6 +38,7 @@ const LeftSideBar = () =>{
 
                 </div>
             </div>
+            <div className="side" onClick={toggleSideBar} ></div>
         </div>
     )
 }

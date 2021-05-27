@@ -47,6 +47,7 @@ const RightSideBar = () =>{
                 CHECKOUT
             </button>
             </div>
+            <div className="side" onClick={toggleSideBar} ></div>
         </div>
     )
 }

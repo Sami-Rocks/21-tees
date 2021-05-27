@@ -8,12 +8,15 @@
   top: 0;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-
+  .side {
+    width: 100%;
+    height: 100%;
+  }
   .container {
     transition: all 0.3s ease-in-out;
     position: absolute;
     background-color: white;
-    width: 30rem;
+    width: 20rem;
     height: 100%;
     padding: 1rem;
     display: flex;

@@ -1,27 +1,30 @@
+@import "./../../assets/css/colors.scss";
+
 .cart-card {
   width: 95%;
   border-radius: 2px;
   padding: 0.4rem 0.5rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid $grey;
   display: flex;
   position: relative;
-  gap: 2rem;
+  gap: 1.5rem;
 
   .icon {
     position: absolute;
-    width: 1rem;
-    bottom: 1rem;
-    left: 11rem;
+    width: 0.7rem;
+    bottom: 0.7rem;
+    left: 7rem;
   }
 
   .product-image img {
-    width: 10rem;
-    height: 12rem;
+    width: 6rem;
+    height: 7rem;
     object-fit: cover;
     text-transform: uppercase;
   }
 
   .product-name {
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 0.4rem;
     word-wrap: none;
@@ -30,20 +33,25 @@
     font-weight: 200;
     font-style: italic;
     word-wrap: none;
+    font-size: 0.7rem;
   }
 
   .product-number {
     display: flex;
 
     .number {
-      margin-top: 1rem;
-      padding: 0.6rem 1.5rem;
+      margin-top: 0.5rem;
+      padding: 0rem 1rem;
     }
   }
+  .special-button {
+    margin-top: 0.4rem;
+  }
   .product-price {
-    font-size: 1.6rem;
+    font-size: 1rem;
+    margin: -0.5rem 0;
     span {
-      font-size: 0.8rem;
+      font-size: 0.5rem;
     }
   }
 }

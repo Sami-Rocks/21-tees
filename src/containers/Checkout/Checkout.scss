@@ -1,10 +1,12 @@
+@import "./../../assets/css/colors.scss";
+
 .checkout {
   .container {
     display: flex;
     flex-direction: column;
   }
   .user-details-form {
-    background: #e0e0e0;
+    background: $dark;
   }
   .user-details-form,
   .payment-form {
@@ -22,7 +24,7 @@
       font-family: inherit;
       width: 100%;
       border: 0;
-      border-bottom: 1.5px solid #000;
+      border-bottom: 1.5px solid $dark;
       outline: 0;
       font-size: 1.1rem;
       background: transparent;
@@ -46,7 +48,7 @@
       top: 1.2rem;
       display: block;
       transition: 0.2s;
-      color: #000;
+      color: $dark;
     }
 
     input:focus ~ label,
@@ -56,7 +58,7 @@
       display: block;
       transition: 0.2s;
       font-size: 0.8rem;
-      color: rgba(0, 0, 0, 0.63);
+      color: opacify($color: $dark, $amount: 0.6);
       font-weight: 700;
     }
     /* reset input */

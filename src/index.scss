@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
-
+@import "./assets/css/colors.scss";
 :root {
-  --grey: "#eeeeee";
-  --dark: "#000000";
-  --red: "#FF5A5A";
-  --highlight: "#E0E0E0";
-
   font-size: 100%;
+}
+.red {
+  color: $red;
 }
 
 p {
@@ -21,7 +19,9 @@ h1,
 h2,
 h3,
 h4,
+a,
 button {
+  color: $dark;
   margin: 0;
   font-family: "Oswald", sans-serif;
 }
@@ -36,33 +36,34 @@ button {
   transition: all 0.3s ease-in-out;
 }
 .primary-button {
-  background-color: #ff5a5a;
-  color: #ffffff;
+  background-color: $red;
+  color: $grey;
   font-size: 2rem;
   font-weight: 500;
   padding: 1rem 4rem;
   border: none;
 }
 .primary-button:hover {
-  background-color: #ff5a5ae7;
+  background-color: opacify($color: $red, $amount: 0.8);
 }
 .secondary-button {
-  border: 2px solid #ff5a5a;
-  color: #ff5a5a;
+  border: 2px solid $red;
+  color: $red;
   font-size: 1.5rem;
   font-weight: 500;
   padding: 0.6rem 4rem;
   background: none;
 }
 .secondary-button:hover {
-  border-color: #ff5a5ae7;
+  border-color: opacify($color: $red, $amount: 0.8);
 }
 .special-button {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
+  padding: 0rem 0.5rem;
+  background: none;
+  border: 1px solid #ccc;
 }
 .special-button:hover {
-  background-color: #ececec;
+  background-color: opacify($color: $grey, $amount: 0.8);
 }
 
 .link-button {
@@ -73,10 +74,10 @@ button {
 }
 
 .close-button {
-  color: var(--red);
+  color: $red;
 }
 .close-button:hover {
-  color: #ff0000b7;
+  color: opacify($color: $red, $amount: 0.8);
 }
 
 .wrapper {
@@ -95,10 +96,12 @@ button {
   border-radius: 2px;
   cursor: pointer;
   padding: 0 0rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid $grey;
   transition: all 0.3s ease;
 }
-
+a {
+  text-decoration: none;
+}
 input[type="radio"] {
   display: none;
 }
@@ -112,11 +115,11 @@ input[type="radio"] {
 #M:checked:checked ~ .M,
 #L:checked:checked ~ .L,
 #XL:checked:checked ~ .XL {
-  border: 1px solid #ff5a5a;
+  border: 1px solid $red;
 }
 .wrapper .option span {
   font-size: 1rem;
-  color: #000;
+  color: $dark;
 }
 .wrapper .option {
   overflow: hidden;

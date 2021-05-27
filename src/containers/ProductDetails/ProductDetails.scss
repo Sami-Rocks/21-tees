@@ -52,10 +52,11 @@
     .container {
       padding: 0 8rem;
       flex-direction: row;
-      justify-content: space-between;
-      gap: 4rem;
+      justify-content: center;
+      gap: 5rem;
       .product-image {
         height: auto;
+        max-height: 45rem;
         width: 40%;
         overflow: hidden;
         img {

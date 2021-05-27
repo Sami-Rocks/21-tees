@@ -1,12 +1,26 @@
 @import "./../../assets/css/colors.scss";
 
 .checkout {
+  form {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  button:disabled {
+    background: blue;
+  }
   .container {
     display: flex;
     flex-direction: column;
   }
+  .title {
+    padding: 4rem;
+    padding-bottom: 0;
+    font-weight: 300;
+    text-align: left;
+  }
   .user-details-form {
-    background: $dark;
+    background: $grey;
   }
   .user-details-form,
   .payment-form {
@@ -35,12 +49,18 @@
       &::placeholder {
         color: transparent;
       }
-
       &:placeholder-shown ~ label {
         font-size: 0.3rem;
         cursor: text;
         top: 2rem;
       }
+    }
+    .error {
+      text-align: left;
+      padding: 0.4rem 0;
+      font-size: 0.6rem;
+      color: $red;
+      letter-spacing: 0.5px;
     }
 
     label {
@@ -59,7 +79,7 @@
       transition: 0.2s;
       font-size: 0.8rem;
       color: opacify($color: $dark, $amount: 0.6);
-      font-weight: 700;
+      font-weight: 300;
     }
     /* reset input */
     input {
@@ -75,14 +95,21 @@
   .checkout {
     width: 100%;
     text-align: center;
+    .title {
+      padding: 4rem 8rem;
+      padding-bottom: 0;
+    }
     .container {
-      padding: 8rem;
+      padding: 4rem 8rem;
       flex-direction: row;
       gap: 2rem;
     }
     .payment-form,
     .user-details-form {
       width: 50%;
+    }
+    .primary-button {
+      margin-top: -1rem;
     }
   }
 }

@@ -3,17 +3,22 @@ import { RightSideBarContext } from '../../helpers/SideBarContext'
 import './RightSideBar.scss'
 
 import CartCard from './../CartCard/';
+import { useHistory } from 'react-router';
 
 
 const RightSideBar = () =>{
     const { rightSideBar, setRightSideBar } = useContext(RightSideBarContext)
-
+    const history = useHistory();
     if(!rightSideBar){
         return(
             <div className="off" >
                 <div className="side-bar right-side-bar"></div>
             </div>
         )
+    }
+    const checkout = () =>{
+        toggleSideBar();
+        history.push("/checkout/21")
     }
 
     const toggleSideBar = () =>{
@@ -43,7 +48,7 @@ const RightSideBar = () =>{
                     </div>
                 </div>
                 <h2 className="total" > <span>TOTAL:  </span> <span className="currency">GHC</span> 25.00 </h2>
-            <button className="button primary-button" >
+            <button className="button primary-button" onClick={checkout} >
                 CHECKOUT
             </button>
             </div>

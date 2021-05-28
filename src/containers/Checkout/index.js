@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -16,6 +16,12 @@ const Checkout = () =>{
         user = JSON.parse(user)
     }
     const { register, formState: { errors }, handleSubmit} = useForm();
+
+    useEffect(()=>{
+        if(cart.length === 0){
+            goBack()
+        }
+    }, [cart])
 
     const onSubmit = data =>{
         setUser(JSON.stringify(data))

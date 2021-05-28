@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './CartCard.scss'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeFromCart, updateCartItem } from './../../Actions/'
 
 

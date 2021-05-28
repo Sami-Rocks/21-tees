@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { RightSideBarContext } from '../../helpers/SideBarContext'
 import './RightSideBar.scss'
 
@@ -32,8 +32,6 @@ const RightSideBar = () =>{
         toggleSideBar();
         history.push("/checkout")
     }
-
-
     
     const toggleSideBar = () =>{
         if(rightSideBar){

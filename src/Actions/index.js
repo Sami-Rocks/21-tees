@@ -10,3 +10,9 @@ export const removeFromCart = (payload) => {
         type: 'REMOVE_FROM_CART'
     }
 }
+export const updateCartItem = (payload) => {
+    return{
+        payload: payload,
+        type: 'UPDATE_CART_ITEM'
+    }
+}

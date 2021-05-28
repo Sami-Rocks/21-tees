@@ -1,7 +1,8 @@
 import './App.scss';
 import Header from './../../components/Header';
 import LeftSideBar from '../../components/LeftSideBar';
-
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 import {LeftSideBarContext} from './../../helpers/SideBarContext.js'
 import {RightSideBarContext} from './../../helpers/SideBarContext.js'
 import { useState } from 'react';
@@ -16,11 +17,15 @@ import {
   Route
 } from "react-router-dom";
 import Footer from '../../components/Footer';
+import { firebaseConfig } from '../../helpers/firebase';
+
+firebase.initializeApp(firebaseConfig)
 
 function App() {
 
   const [leftSideBar, setLeftSideBar] = useState();
   const [rightSideBar, setRightSideBar] = useState();
+
 
   return (
     <Router>
@@ -34,7 +39,7 @@ function App() {
               <Route path="/product-details/:id">
                 <ProductDetails />
               </Route>
-              <Route path="/checkout/:id">
+              <Route path="/checkout">
                 <Checkout />
               </Route>
               <Route path="/">

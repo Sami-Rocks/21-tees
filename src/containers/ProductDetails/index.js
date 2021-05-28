@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
 import './ProductDetails.scss'
@@ -10,22 +10,33 @@ import { RightSideBarContext } from '../../helpers/SideBarContext';
 import { useForm } from 'react-hook-form';
 import { addToCart } from './../../Actions'
 import { useDispatch } from 'react-redux';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 
 const ProductDetails = () => {
     const history = useHistory();
     const { rightSideBar, setRightSideBar } = useContext(RightSideBarContext)
     const { register, handleSubmit } = useForm()
     const dispatch = useDispatch()
-
     let {id} = useParams()
+    const [product, setProduct] = useState([])
+
+    const tee = firebase.firestore().collection('tees').doc(id);
+
+    useEffect(()=>{
+        tee.get().then((doc) =>{
+            if(!doc.exists) return;
+            setProduct(doc.data())
+        })
+    })
 
     const onSubmit = data =>{
+        data.product = product
         data.id = id
-        console.log(data)
-        
+        data.numberOfShirts = 1
         goBack();
         toggleRightSideBar()
-
         dispatch(addToCart(data))
 
     }
@@ -55,7 +66,7 @@ const ProductDetails = () => {
                         </div>
                         <div className="product-options">
                             <div className="title">
-                                <h2 >AWESOME PRODUCT NAME</h2>
+                                <h2 >{product.name}</h2>
                             </div>
                             <div className="options">
                                 <div className="brand">
@@ -115,7 +126,7 @@ const ProductDetails = () => {
                                 </div>
                             </div>
                             <div className="price">
-                                <p> <span>GHC</span> 25.00</p>
+                                <p> <span>GHC</span> {product.price ? product.price.toFixed(2) : product.price}</p>
                             </div>
                             <button className="button primary-button" >ADD TO CART</button>
 

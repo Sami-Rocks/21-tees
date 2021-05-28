@@ -1,11 +1,16 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import useLocalStorage from 'react-use-localstorage';
 import './Checkout.scss' 
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const Checkout = () =>{
     const history = useHistory();
+    const cart = useSelector(state => state.cart)
+
     let [user, setUser] = useLocalStorage("user", '');
     if (user) {
         user = JSON.parse(user)
@@ -13,10 +18,12 @@ const Checkout = () =>{
     const { register, formState: { errors }, handleSubmit} = useForm();
 
     const onSubmit = data =>{
-        console.log(data)
-        console.log(errors)
         setUser(JSON.stringify(data))
         console.log(data)
+        data.product_details = cart
+
+        firebase.firestore().collection("orders").add(data)
+        goBack()
     }
 
     const goBack= ()=> {

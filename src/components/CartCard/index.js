@@ -2,27 +2,26 @@ import React, { useState } from 'react'
 import './CartCard.scss'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
-import { useDispatch } from 'react-redux';
-import { removeFromCart } from './../../Actions/'
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart, updateCartItem } from './../../Actions/'
 
 
-const CartCard = () =>{
-
-    const [numberOfShirts, setNumberOfShirts] = useState(1)
+const CartCard = (product) =>{
     const dispatch = useDispatch()
 
-    let product = {id: "21"}
-
+   let tee = product.product
     const remove = (product) =>{
         dispatch(removeFromCart(product))
     }
 
     const increaseNumberOfShirt = () =>{
-        setNumberOfShirts(prevNumer => prevNumer+ 1)
+        tee.numberOfShirts = tee.numberOfShirts +1
+        dispatch(updateCartItem(tee))
     }
     const decreaseNumberOfShirt = () =>{
-        if(numberOfShirts !== 1){
-            setNumberOfShirts(prevNumer => prevNumer- 1)
+        if(tee.numberOfShirts !== 1){
+            tee.numberOfShirts = tee.numberOfShirts -1
+            dispatch(updateCartItem(tee))
         }
     }
 
@@ -33,10 +32,10 @@ const CartCard = () =>{
             </div>
             <div className="product-details">
                 <h2 className="product-name">
-                    Awesome Product Name
+                    {tee.product.name}
                 </h2>
                 <p className='product-description' >
-                    Dark grey, Extral Large, Gildan
+                   {tee.brand}, {tee.size}, {tee.color}
                 </p>
                 <div className="product-number">
                     <button 
@@ -45,7 +44,7 @@ const CartCard = () =>{
                     >
                         -
                     </button>
-                    <p className="number" >{numberOfShirts}</p>
+                    <p className="number" >{tee.numberOfShirts}</p>
                     <button 
                     className="button special-button" 
                     onClick={increaseNumberOfShirt}
@@ -54,8 +53,8 @@ const CartCard = () =>{
                     </button>
                 </div>
                 <div className="product-price">
-                    <p> <span>GHC</span> 25.00 </p>
-                    <button className="button link-button" onClick={()=>remove(product)}  ><i> remove from cart</i></button>
+                    <p> <span>GHC</span> {tee.product.price} </p>
+                    <button className="button link-button" onClick={()=>remove(tee)}  ><i> remove from cart</i></button>
                 </div>
             </div>
             <img className="icon"  src={Icon} alt="Icons" />

@@ -9,6 +9,7 @@ import { useState } from 'react';
 import RightSideBar from '../../components/RightSideBar';
 import ProductDetails from '../ProductDetails';
 import Checkout from '../Checkout';
+import CustomShirt from '../CustomShirt';
 import Shop from '../Shop';
 
 import {
@@ -38,6 +39,9 @@ function App() {
             <Switch>
               <Route path="/product-details/:id">
                 <ProductDetails />
+              </Route>
+              <Route path="/custom-design">
+                <CustomShirt />
               </Route>
               <Route path="/checkout">
                 <Checkout />

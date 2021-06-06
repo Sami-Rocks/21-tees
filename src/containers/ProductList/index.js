@@ -28,8 +28,8 @@ const ProductList = () =>{
     const skeleton = <><ProductItemSkeleton /> <ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /></>
     return(
         <div className="product-list">
-            {skeleton}
-            {/* { products.length === 0 ? skeleton : items } */}
+            {/* {skeleton} */}
+            { products.length === 0 ? skeleton : items }
         </div>
     )
 }

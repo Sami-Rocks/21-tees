@@ -24,11 +24,11 @@ const Header = () =>{
     return (
         <header>
             <div className="header" >
-                <div className="logo" onClick={toggleLeftSideBar} >
+                <div data-testid="logo" className="logo" onClick={toggleLeftSideBar} >
                     21TEES
                 </div>
                 <div className="header-buttons">
-                    <div className="cart" onClick={toggleRightSideBar} >
+                    <div data-testid="cart" className="cart" onClick={toggleRightSideBar} >
                         CART
                     </div>
                 </div>

@@ -117,7 +117,8 @@ const Checkout = () =>{
                                     <label htmlFor="network">Network</label>
                                 </div>
                                 <button className="button secondary-button" >
-                                    Pay <span >GHC</span> 25.00
+                                    Make Payment
+                                    {/* Pay <span >GHC</span> {cart.total} */}
                                 </button>
                             </div>
                         </div>

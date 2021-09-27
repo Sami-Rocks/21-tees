@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { RightSideBarContext } from '../../helpers/SideBarContext'
-import './RightSideBar.scss'
+import './style.scss'
 
-import CartCard from './../CartCard/';
+import CartCard from '../CartCard';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 

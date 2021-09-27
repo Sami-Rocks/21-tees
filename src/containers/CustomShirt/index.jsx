@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Icon from './../../assets/images/icon.png';
-import './CustomShirt.scss'
+import './style.scss'
 import LightGrey from './../.../../../assets/images/light-grey.png'
 import DarkGrey from './../.../../../assets/images/dark-grey.png'
 import Dark from './../.../../../assets/images/dark.png'

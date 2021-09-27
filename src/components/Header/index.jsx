@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { LeftSideBarContext } from '../../helpers/SideBarContext';
 import { RightSideBarContext } from '../../helpers/SideBarContext'
-import './Header.scss'
+import './style.scss'
 
 const Header = () =>{
     const { leftSideBar, setLeftSideBar } = useContext(LeftSideBarContext)

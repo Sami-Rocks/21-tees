@@ -1,0 +1,37 @@
+.product-detail {
+  .custom-design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .product-detail {
+    height: 70vh;
+    .icon {
+      left: 50%;
+    }
+    .container {
+      padding: 0 8rem;
+      flex-direction: row;
+      justify-content: center;
+      gap: 5rem;
+      .product-image {
+        height: auto;
+        max-height: 45rem;
+        width: 40%;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+        }
+      }
+      .product-options {
+        width: 40%;
+        margin-top: 0;
+      }
+    }
+  }
+}

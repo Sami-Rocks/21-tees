@@ -1,0 +1,64 @@
+@import "./../../assets/css/colors.scss";
+
+.cart-card {
+  width: 95%;
+  border-radius: 2px;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid $grey;
+  display: flex;
+  position: relative;
+  gap: 1.5rem;
+
+  .icon {
+    position: absolute;
+    width: 0.7rem;
+    bottom: 0.7rem;
+    left: 7rem;
+  }
+
+  .product-image img {
+    width: 6rem;
+    height: 7rem;
+    object-fit: cover;
+    text-transform: uppercase;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    word-wrap: none;
+  }
+  .product-description {
+    font-weight: 200;
+    font-style: italic;
+    word-wrap: none;
+    font-size: 0.7rem;
+  }
+
+  .product-number {
+    display: flex;
+
+    .number {
+      margin-top: 0.5rem;
+      padding: 0rem 1rem;
+    }
+  }
+  .special-button {
+    margin-top: 0.4rem;
+  }
+  .product-price {
+    font-size: 1rem;
+    margin: -0.5rem 0;
+    display: flex;
+    gap: 1rem;
+    .link-button {
+      color: $red;
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+    }
+    span {
+      font-size: 0.5rem;
+    }
+  }
+}

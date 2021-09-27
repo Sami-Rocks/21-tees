@@ -1,0 +1,68 @@
+.capsules {
+  position: relative;
+  .scroll-container {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid rgb(241, 241, 241);
+    padding: 0.7rem 1rem;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .gap {
+      width: 6rem;
+      content: " ";
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .capsule {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    letter-spacing: 1.7px;
+    transition: all 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color: #ccc, $alpha: 0.2);
+    }
+  }
+
+  .scroll {
+    position: absolute;
+    height: 3.5rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1px;
+    cursor: pointer;
+  }
+  .left-scroll {
+    left: 0;
+    background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    );
+  }
+  .right-scroll {
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    );
+  }
+}

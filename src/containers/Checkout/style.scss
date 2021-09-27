@@ -1,0 +1,115 @@
+@import "./../../assets/css/colors.scss";
+
+.checkout {
+  form {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  button:disabled {
+    background: blue;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    padding: 4rem;
+    padding-bottom: 0;
+    font-weight: 300;
+    text-align: left;
+  }
+  .user-details-form {
+    background: $grey;
+  }
+  .user-details-form,
+  .payment-form {
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: calc(2rem + 25px);
+    .inputGroup {
+      position: relative;
+      padding: 25px 0 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    input {
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 1.5px solid $dark;
+      outline: 0;
+      font-size: 1.1rem;
+      background: transparent;
+      transition: border-color 0.2s;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+
+      &::placeholder {
+        color: transparent;
+      }
+      &:placeholder-shown ~ label {
+        font-size: 0.3rem;
+        cursor: text;
+        top: 2rem;
+      }
+    }
+    .error {
+      text-align: left;
+      padding: 0.4rem 0;
+      font-size: 0.6rem;
+      color: $red;
+      letter-spacing: 0.5px;
+    }
+
+    label {
+      position: absolute;
+      top: 1.2rem;
+      display: block;
+      transition: 0.2s;
+      color: $dark;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 0.8rem;
+      color: opacify($color: $dark, $amount: 0.6);
+      font-weight: 300;
+    }
+    /* reset input */
+    input {
+      &:required,
+      &:invalid {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .checkout {
+    width: 100%;
+    text-align: center;
+    .title {
+      padding: 4rem 8rem;
+      padding-bottom: 0;
+    }
+    .container {
+      padding: 4rem 8rem;
+      flex-direction: row;
+      gap: 2rem;
+    }
+    .payment-form,
+    .user-details-form {
+      width: 50%;
+    }
+    .primary-button {
+      margin-top: -1rem;
+    }
+  }
+}

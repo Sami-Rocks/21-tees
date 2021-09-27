@@ -1,0 +1,30 @@
+@import "./../../assets/css/colors.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.small-banner {
+  background-color: $grey;
+  padding: 3rem 2rem;
+
+  .back {
+    cursor: pointer;
+    text-decoration: none;
+    color: $dark;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .small-banner {
+    padding: 3rem 8rem;
+  }
+}

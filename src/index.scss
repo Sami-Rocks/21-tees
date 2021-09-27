@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import "./assets/css/colors.scss";
+:root {
+  font-size: 100%;
+}
+.red {
+  color: $red;
+}
+
+p {
+  margin: 0;
+}
+body {
+  position: relative;
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+a,
+button {
+  color: $dark;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+@mixin button {
+  font-size: 1.1rem;
+  margin: 1.2rem 0;
+  padding: 0.4rem 1rem;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+input::-webkit-file-upload-button {
+  @include button;
+  margin-right: 1rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.primary-button {
+  @include button;
+  background-color: $red;
+  color: $grey;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 4rem;
+  border: none;
+}
+.primary-button:hover {
+  background-color: opacify($color: $red, $amount: 0.8);
+}
+.secondary-button {
+  @include button;
+  border: 2px solid $red;
+  color: $red;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.6rem 4rem;
+  background: none;
+}
+.secondary-button:hover {
+  border-color: opacify($color: $red, $amount: 0.8);
+}
+.special-button {
+  @include button;
+  padding: 0rem 0.5rem;
+  background: none;
+  border: 1px solid #ccc;
+}
+.special-button:hover {
+  background-color: opacify($color: $grey, $amount: 0.8);
+}
+
+.link-button {
+  @include button;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.close-button {
+  color: $red;
+}
+.close-button:hover {
+  color: opacify($color: $red, $amount: 0.8);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.wrapper .option {
+  height: 2.2rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0 0rem;
+  border: 1px solid $grey;
+  transition: all 0.3s ease;
+}
+a {
+  text-decoration: none;
+}
+input[type="radio"] {
+  display: none;
+}
+#gildan:checked:checked ~ .gildan,
+#white:checked:checked ~ .white,
+#light-grey:checked:checked ~ .light-grey,
+#dark-grey:checked:checked ~ .dark-grey,
+#dark:checked:checked ~ .dark,
+#M:checked:checked ~ .M,
+#S:checked:checked ~ .S,
+#M:checked:checked ~ .M,
+#L:checked:checked ~ .L,
+#XL:checked:checked ~ .XL {
+  border: 1px solid $red;
+}
+.wrapper .option span {
+  font-size: 1rem;
+  color: $dark;
+}
+.wrapper .option {
+  overflow: hidden;
+}
+.wrapper img {
+  width: 4rem;
+  object-fit: cover;
+}

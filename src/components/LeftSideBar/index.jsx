@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { LeftSideBarContext } from '../../helpers/SideBarContext'
-import './LeftSideBar.scss'
+import './style.scss'
 
 
 const LeftSideBar = () =>{

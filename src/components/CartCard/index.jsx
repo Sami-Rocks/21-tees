@@ -1,5 +1,5 @@
 import React from 'react'
-import './CartCard.scss'
+import './style.scss'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
 import { useDispatch } from 'react-redux';

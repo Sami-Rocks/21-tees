@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
-import './ProductDetails.scss'
+import './style.scss'
 import LightGrey from './../.../../../assets/images/light-grey.png'
 import DarkGrey from './../.../../../assets/images/dark-grey.png'
 import Dark from './../.../../../assets/images/dark.png'
 import { useHistory, useParams } from 'react-router';
 import { RightSideBarContext } from '../../helpers/SideBarContext';
 import { useForm } from 'react-hook-form';
-import { addToCart } from './../../Actions'
+import { addToCart } from '../../Actions'
 import { useDispatch } from 'react-redux';
 import firebase from 'firebase/app';
 import 'firebase/firestore';

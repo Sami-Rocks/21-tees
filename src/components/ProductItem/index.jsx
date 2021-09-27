@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProductItem.scss'
+import './style.scss'
 import Icon from './../../assets/images/icon.png';
 import Tshirt from './../../assets/images/black-t-shirt-front-isolated.png'
 import { Link } from 'react-router-dom';

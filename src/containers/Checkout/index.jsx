@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import useLocalStorage from 'react-use-localstorage';
-import './Checkout.scss' 
+import './style.scss' 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 

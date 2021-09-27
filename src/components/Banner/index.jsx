@@ -1,5 +1,5 @@
 import React from 'react'
-import './Banner.scss'
+import './style.scss'
 import { useHistory } from 'react-router';
 
 

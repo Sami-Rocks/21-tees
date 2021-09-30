@@ -10,16 +10,16 @@ const ProductList = () =>{
     const tees = firebase.firestore().collection('tees');
     const [products, setProducts] = useState([])
 
-    // useEffect(()=>{
-    //     tees.get()
-    //         .then((snapshot) => {
-    //             const data = snapshot.docs.map((doc) => ({
-    //             id: doc.id,
-    //             ...doc.data(),
-    //             }));
-    //             setProducts(data)
-    //         });
-    // },[tees])
+    useEffect(()=>{
+        tees.get()
+            .then((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+                }));
+                setProducts(data)
+            });
+    },[tees])
 
     const items =  products.map((product, index) => (
         <ProductItem key={index} product={product} />

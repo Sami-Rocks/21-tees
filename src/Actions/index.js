@@ -4,6 +4,12 @@ export const addToCart = (payload) => {
         type: 'ADD_TO_CART'
     }
 }
+export const addProducts = (payload) => {
+    return{
+        payload: payload,
+        type: 'ADD_TO_CART'
+    }
+}
 export const removeFromCart = (payload) => {
     return{
         payload: payload,

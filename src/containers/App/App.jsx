@@ -19,6 +19,7 @@ import {
 } from "react-router-dom";
 import Footer from '../../components/Footer';
 import { firebaseConfig } from '../../helpers/firebase';
+import UserShop from '../UserShop';
 
 firebase.initializeApp(firebaseConfig)
 
@@ -37,16 +38,20 @@ function App() {
             <LeftSideBar/>
             <RightSideBar />
             <Switch>
-              <Route path="/product-details/:id">
+              <Route exact path="/product-details/:id">
                 <ProductDetails />
               </Route>
-              <Route path="/custom-design">
+              <Route exact path="/custom-design">
                 <CustomShirt />
               </Route>
-              <Route path="/checkout">
+              <Route exact path="/checkout">
                 <Checkout />
               </Route>
-              <Route path="/">
+              <Route exact path="/shop">
+                <UserShop />
+              </Route>
+
+              <Route exact path="/">
                 <Shop />
               </Route>
             </Switch>

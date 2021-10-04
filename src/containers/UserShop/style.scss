@@ -1,0 +1,52 @@
+@import "./../../assets/css/colors.scss";
+
+.user-shop{
+    .user-banner{
+        height: 18rem;
+        background-color:$grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+            font-size: 5rem;
+            letter-spacing: 2.5rem;
+        }
+    }
+    .user-grid{
+        display: flex;
+        flex-direction: row;
+        .user-info{
+            padding: 2rem;
+            width: 20rem;
+
+            .shop-avatar{
+                border-radius: 50%;
+                background-color:$grey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                width: 3rem;
+                height: 3rem;
+            }
+            h3{
+                margin: 1rem 0;
+                font-size: 2rem;
+            }
+            .shop-socials{
+                display: flex;
+                margin: 2rem 0;
+                gap: 20px;
+                svg{
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    width: 25px;
+                    height: 25px;
+                    &:hover{
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,6 @@
+@import "./../../assets/styles/colors";
+
+
 .capsules {
   position: relative;
   .scroll-container {
@@ -29,8 +32,12 @@
     transition: all 0.3s ease;
     &:hover {
       cursor: pointer;
-      background-color: rgba($color: #ccc, $alpha: 0.2);
+      background-color: rgba($color: $red, $alpha: 0.1);
     }
+
+  }
+  .active{
+    background-color: rgba($color: $red, $alpha: 0.2);
   }
 
   .scroll {

@@ -6,13 +6,13 @@ import LightGrey from './../.../../../assets/images/light-grey.png'
 import DarkGrey from './../.../../../assets/images/dark-grey.png'
 import Dark from './../.../../../assets/images/dark.png'
 import { useHistory, useParams } from 'react-router';
-import { RightSideBarContext } from '../../helpers/SideBarContext';
+import { RightSideBarContext } from '../../helpers/contexts';
 import { useForm } from 'react-hook-form';
 import { addToCart } from '../../Actions'
 import { useDispatch } from 'react-redux';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
+import { productsData, sizes, colors, brands } from '../../data';
 
 const ProductDetails = () => {
     const history = useHistory();
@@ -22,14 +22,20 @@ const ProductDetails = () => {
     let {id} = useParams()
     const [product, setProduct] = useState([])
 
-    const tee = firebase.firestore().collection('tees').doc(id);
+    // const tee = firebase.firestore().collection('tees').doc(id);
 
-    useEffect(()=>{
-        tee.get().then((doc) =>{
-            if(!doc.exists) return;
-            setProduct(doc.data())
-        })
-    })
+    // useEffect(()=>{
+    //     tee.get().then((doc) =>{
+    //         if(!doc.exists) return;
+    //         setProduct(doc.data())
+    //     })
+    // },[tee])
+
+    useEffect(() => {
+        const pro = productsData.find(item => item.id === parseInt(id) )
+        setProduct(pro)
+
+    }, [id])
 
     const onSubmit = data =>{
         data.product = product
@@ -38,27 +44,23 @@ const ProductDetails = () => {
         goBack();
         toggleRightSideBar()
         dispatch(addToCart(data))
-
+ 
     }
 
     const goBack = () =>{
-          history.push("/");
+          history.goBack();
     }
 
     const toggleRightSideBar = () =>{
-        if(rightSideBar){
-            setRightSideBar(false)
-        }else{
-            setRightSideBar(true)
-        }
+        setRightSideBar(!rightSideBar)
     }
 
     return(
         <>
             <div className="small-banner">
                 <p className="back" onClick={goBack} >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                         </svg> 
                     back to shop
                 </p>
@@ -90,6 +92,7 @@ const ProductDetails = () => {
                                 <div className="size">
                                     <div className="option-title" >2. Size</div>
                                     <div className="wrapper">
+                                        
                                         <input type="radio" name="size" value="S" id="S" defaultChecked {...register("size")} />
                                         <input type="radio" name="size" value="M" id="M" {...register("size")}/>
                                         <input type="radio" name="size" value="L" id="L" {...register("size")}/>

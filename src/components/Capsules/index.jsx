@@ -1,7 +1,11 @@
-import { createRef } from "react"
+import { createRef, useContext } from "react"
 import "./style.scss"
+import { tags } from "../../data"
+import { ActiveCapsuleContext } from "../../helpers/contexts"
 
 const Capsules = () => {
+
+    const { activeCapsule, setActiveCapsule } = useContext(ActiveCapsuleContext)
 
     const scrollRef = createRef()
 
@@ -13,6 +17,10 @@ const Capsules = () => {
         }
     }
 
+    const activateCapsule = (id) => {
+        setActiveCapsule(id)
+    }
+
     return(
         <div className="capsules" >
             <div className="scroll left-scroll" onClick={()=>(scroll("right"))} >
@@ -21,107 +29,14 @@ const Capsules = () => {
                 </svg>
             </div>
             <div className="scroll-container" ref={scrollRef}>
-                <div className="gap">{"s"}</div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="capsule">
-                    <p>Cap</p>
-                </div>
-                <div className="capsule">
-                    <p>Capu</p>
-                </div>
-                <div className="capsule">
-                    <p>Capsules</p>
-                </div>
-                <div className="gap">{"s"}</div>
+                <div className="gap">{" "}</div>
+
+                {tags.map(tag=>{
+                    return <div key={tag.id} className={`capsule ${activeCapsule === tag.id ? 'active ' : ''}`}  onClick={()=>activateCapsule(tag.id)} ><p>{tag.tag}</p></div>
+                })}
+
+               
+                <div className="gap">{" "}</div>
             </div>
 
             <div className="scroll right-scroll" onClick={()=>(scroll("left"))} >

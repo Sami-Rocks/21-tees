@@ -33,7 +33,7 @@ const Checkout = () =>{
     }
 
     const goBack= ()=> {
-      history.push("/");
+      history.goBack()
     }
     return(
         <>

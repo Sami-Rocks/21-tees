@@ -7,12 +7,11 @@ import 'firebase/firestore';
 import { productsData } from '../../data';
 
 const ProductList = (props) =>{
-
     const tees = firebase.firestore().collection('tees');
     const [products, setProducts] = useState([])
 
     useEffect(()=>{
-        if(props.shop === undefined){
+        if(props.shop === undefined ){
             setProducts(productsData)
         }else{
             const shop = props.shop
@@ -22,7 +21,7 @@ const ProductList = (props) =>{
     },[props.shop])
 
     useEffect(()=>{
-        if(props.activeCapsule === ''){
+        if(props.activeCapsule === '' || props.activeCapsule === undefined){
             setProducts(productsData)
         }else{
             const activeCapsule = props.activeCapsule
@@ -50,7 +49,6 @@ const ProductList = (props) =>{
     const skeleton = <><ProductItemSkeleton /> <ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /><ProductItemSkeleton /></>
     return(
         <div className="product-list">
-            {/* {skeleton} */}
             { products.length === 0 ? skeleton : items }
         </div>
     )

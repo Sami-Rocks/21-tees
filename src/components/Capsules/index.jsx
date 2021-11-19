@@ -2,8 +2,11 @@ import { createRef, useContext } from "react"
 import "./style.scss"
 import { tags } from "../../data"
 import { ActiveCapsuleContext } from "../../helpers/contexts"
+import { useHistory } from "react-router"
 
 const Capsules = () => {
+
+    const history = useHistory()
 
     const { activeCapsule, setActiveCapsule } = useContext(ActiveCapsuleContext)
 
@@ -21,6 +24,11 @@ const Capsules = () => {
         setActiveCapsule(id)
     }
 
+
+    const gotoShops = () => {
+        history.push("/shop/all_shops")
+    }
+
     return(
         <div className="capsules" >
             <div className="scroll left-scroll" onClick={()=>(scroll("right"))} >
@@ -30,7 +38,7 @@ const Capsules = () => {
             </div>
             <div className="scroll-container" ref={scrollRef}>
                 <div className="gap">{" "}</div>
-
+                <div className="capsule shops" onClick={gotoShops} ><p>Shops</p></div>
                 {tags.map(tag=>{
                     return <div key={tag.id} className={`capsule ${activeCapsule === tag.id ? 'active ' : ''}`}  onClick={()=>activateCapsule(tag.id)} ><p>{tag.tag}</p></div>
                 })}

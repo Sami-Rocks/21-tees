@@ -3,26 +3,29 @@ import './style.scss'
 import { useHistory } from 'react-router';
 
 
-const Banner = () =>{
+const Banner = (props) =>{
 
     const history = useHistory();
 
     const navigate= ()=> {
         history.push("/custom-design");
       }
-      
+    
 
     return(
-        <div className="banner">
+        <div className={`banner ${props.shop !== undefined ? 'shop_banner' : ''} ` }>
             <div className="container">
-                <div className="big-text" >
+                <div className={`big-text ${props.shop !== undefined ? 'center' : ''} ` } >
                     <h1>
-                        DO YOU HAVE YOUR<br/>
-                        OWN DESIGN?
+                        { props.shop === undefined ? <>DO YOU HAVE YOUR <br/>
+                        OWN DESIGN?</> : props.shop.name }
+                        
                     </h1>
-                    <button className="button primary-button" onClick={navigate} >
+
+                    {props.shop === undefined ?  <button className="button secondary-button" onClick={navigate} >
                         SHOW US
-                    </button>
+                    </button> : ''}
+                   
                 </div>
             </div>
         </div>

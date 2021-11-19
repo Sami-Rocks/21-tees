@@ -60,7 +60,7 @@ input::-webkit-file-upload-button {
   font-size: 1.5rem;
   font-weight: 500;
   padding: 0.6rem 4rem;
-  background: none;
+  background: $grey;
 }
 .secondary-button:hover {
   border-color: opacify($color: $red, $amount: 0.8);
@@ -115,7 +115,18 @@ a {
 input[type="radio"] {
   display: none;
 }
+#green:checked:checked ~ .green,
+#blue:checked:checked ~ .blue,
+#red:checked:checked ~ .red,
+#black:checked:checked ~ .black,
+#blue-black:checked:checked ~ .blue-black,
+#orange:checked:checked ~ .orange,
+
 #gildan:checked:checked ~ .gildan,
+#wool:checked:checked ~ .wool,
+#cotten:checked:checked ~ .cotten,
+#nylon:checked:checked ~ .nylon,
+
 #white:checked:checked ~ .white,
 #light-grey:checked:checked ~ .light-grey,
 #dark-grey:checked:checked ~ .dark-grey,

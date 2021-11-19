@@ -2,19 +2,27 @@
 
 .banner {
   height: 25rem;
-  background: $grey;
+  background: $red;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-
   .container {
     padding: 0 2rem;
   }
-
+  
   h1 {
+    color: #ffffff;
     font-size: 2.5rem;
   }
+
+  .center{
+    text-align: center;
+  }
+}
+
+.shop_banner{
+  height: 15rem;
 }
 
 @media only screen and (min-width: 800px) {

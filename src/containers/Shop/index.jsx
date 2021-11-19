@@ -8,12 +8,12 @@ const Shop = () =>{
     const { shopId } = useParams()
     const allShop = shops
 
-    const shop = allShop.find(item => item.id === parseInt(shopId))
+    const shop = allShop.find(item => item.id === shopId)
 
     return(
         <div className="container">
-            <Banner/>
-            <ProductList  shop={shop} />
+            <Banner shop={shop}  />
+            <ProductList shop={shop} />
         </div>
     )
 }

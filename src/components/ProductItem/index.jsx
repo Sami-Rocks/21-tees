@@ -10,7 +10,7 @@ const ProductItem = (product) => {
         <div className="product-item">
             <Link to={`/product-details/${tee.id}`}>
                 <div className="image-container">
-                    <img src={Tshirt} alt="product"/>
+                    <img src={tee.images.thumbnail} alt="product"/>
                 </div>
                 <div className="text-container">
                     <div className="product-name">

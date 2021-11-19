@@ -18,6 +18,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        object-position: center;
       }
     }
     .product-options {
@@ -60,7 +61,10 @@
         width: 40%;
         overflow: hidden;
         img {
+          height: 600px;
+          width: 500px;
           object-fit: cover;
+          object-position: center center;
         }
       }
       .product-options {

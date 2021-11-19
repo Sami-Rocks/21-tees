@@ -36,6 +36,9 @@
     }
 
   }
+  .shops{
+    border: 1px solid $red;
+  }
   .active{
     background-color: rgba($color: $red, $alpha: 0.2);
   }

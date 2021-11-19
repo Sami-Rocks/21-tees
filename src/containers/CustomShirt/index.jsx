@@ -1,9 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Icon from './../../assets/images/icon.png';
 import './style.scss'
-import LightGrey from './../.../../../assets/images/light-grey.png'
-import DarkGrey from './../.../../../assets/images/dark-grey.png'
-import Dark from './../.../../../assets/images/dark.png'
 import { useHistory } from 'react-router';
 import { RightSideBarContext } from '../../helpers/contexts';
 import { useForm } from 'react-hook-form';
@@ -11,6 +8,7 @@ import { addToCart } from '../../Actions'
 import { useDispatch } from 'react-redux';
 import firebase from 'firebase/app';
 import 'firebase/storage';
+import { sizes, colors, brands } from '../../data';
 
 
 const CustomShirt = () => {
@@ -20,8 +18,8 @@ const CustomShirt = () => {
     const dispatch = useDispatch()
     const [product, setProduct] = useState({name: "Custom Design", price: 50})
 
-
     const onSubmit = data =>{
+
         data.product = product
         data.id = Math.random() * 10000
         data.numberOfShirts = 1
@@ -29,7 +27,6 @@ const CustomShirt = () => {
         toggleRightSideBar()
         dispatch(addToCart(data))
 
-        console.log(data)
         const reader = new FileReader();
         let file = data.design[0]; 
         if (file) {
@@ -80,56 +77,65 @@ const CustomShirt = () => {
                                 <div className="brand">
                                     <div className="option-title" >1. Brand</div>
                                     <div className="wrapper">
-                                        <input 
-                                            type="radio" 
-                                            name="brand" 
-                                            value="gildan" 
-                                            id="gildan" defaultChecked {...register("brand")} />
-                                        <label htmlFor="gildan" className="option gildan">
-                                            <span>GILDAN</span>
-                                        </label>
+                                    {
+                                            brands.map(brand=>{
+                                                return (<>
+                                                    <input 
+                                                        type="radio" 
+                                                        name="brand" 
+                                                        value={brand.brand} 
+                                                        id={brand.brand} 
+                                                        defaultChecked
+                                                        {...register("brand")} />
+                                                    <label htmlFor={brand.brand} className={`option ${brand.brand}`}>
+                                                        <span>{(brand.brand).toUpperCase()}</span>
+                                                    </label>
+
+                                                </>)
+                                            })
+                                        }
                                     </div>
                                 </div>
                                 <div className="size">
                                     <div className="option-title" >2. Size</div>
                                     <div className="wrapper">
-                                        <input type="radio" name="size" value="S" id="S" defaultChecked {...register("size")} />
-                                        <input type="radio" name="size" value="M" id="M" {...register("size")}/>
-                                        <input type="radio" name="size" value="L" id="L" {...register("size")}/>
-                                        <input type="radio" name="size" value="XL" id="XL" {...register("size")}/>
-                                        <label htmlFor="S" className="option S" >
-                                            <span>S</span>
-                                            </label>
-                                        <label htmlFor="M" className="option M">
-                                            <span>M</span>
-                                        </label>
-                                        <label htmlFor="L" className="option L">
-                                            <span>L</span>
-                                        </label>
-                                        <label htmlFor="XL" className="option XL">
-                                            <span>XL</span>
-                                        </label>
+                                    {
+                                        sizes.map(size=>{
+                                            return  (<>
+                                                <input 
+                                                    type="radio" 
+                                                    name="size" 
+                                                    value={size.size} 
+                                                    id={size.size} 
+                                                    defaultChecked
+                                                    {...register("size")} />
+                                                <label htmlFor={size.size} className={`option ${size.size}`} >
+                                                    <span>{size.size}</span>
+                                                </label>
+                                                </>)
+                                        })
+                                    }
                                     </div>
                                 </div>
                                 <div className="color" >
                                 <div className="option-title" >3. Color</div>
                                 <div className="wrapper">
-                                        <input type="radio" name="color" value="white" id="white" defaultChecked {...register("color")}/>
-                                        <input type="radio" name="color" value="dark-grey" id="dark-grey" {...register("color")}/>
-                                        <input type="radio" name="color" value="light-grey" id="light-grey" {...register("color")}/>
-                                        <input type="radio" name="color" value="dark" id="dark" {...register("color")}/>
-                                        <label htmlFor="white" className="option white" >
-                                            <span></span>
-                                            </label>
-                                        <label htmlFor="dark-grey" className="option dark-grey">
-                                                <img src={DarkGrey} alt="dark-grey" />
-                                        </label>
-                                        <label htmlFor="light-grey" className="option light-grey">
-                                            <img src={LightGrey} alt="dark-grey" />
-                                        </label>
-                                        <label htmlFor="dark" className="option dark">
-                                            <img src={Dark} alt="dark-grey" />
-                                        </label>
+                                {
+                                            colors.map(color=>{
+                                                return(<>
+                                                    <input 
+                                                        type="radio" 
+                                                        name="color" 
+                                                        value={color.color} 
+                                                        id={color.color} 
+                                                        defaultChecked
+                                                        {...register("color")}/>
+                                                    <label htmlFor={color.color}  style={{ background: `${color.code}`}} className={`option ${color.color}`} >
+                                                        <span ></span>
+                                                    </label>
+                                                </>)
+                                            })
+                                        }
                                     </div>
                                 </div>
                             </div>

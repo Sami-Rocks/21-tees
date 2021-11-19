@@ -106,7 +106,7 @@ input::-webkit-file-upload-button {
   border-radius: 2px;
   cursor: pointer;
   padding: 0 0rem;
-  border: 1px solid $grey;
+  border: 1px solid rgb(221, 220, 220);
   transition: all 0.3s ease;
 }
 a {
@@ -136,7 +136,7 @@ input[type="radio"] {
 #M:checked:checked ~ .M,
 #L:checked:checked ~ .L,
 #XL:checked:checked ~ .XL {
-  border: 1px solid $red;
+  border: 1.8px solid $red;
 }
 .wrapper .option span {
   font-size: 1rem;
